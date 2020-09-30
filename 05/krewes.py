@@ -20,4 +20,4 @@ s = s.lower() #Non-case sensitive
 if s != "orpheus" and s != "rex" and s != "endymion": #Not a teamname
     print("That's not one of the three")
 else: #For random index within bounds of list, print related value
-    print(KREWES[s][random.randint(0, len(KREWES[s]))]) #print(<list><index>)
+    print(KREWES[s][random.randint(0, len(KREWES[s]) - 1)]) #print(<list><index>)
