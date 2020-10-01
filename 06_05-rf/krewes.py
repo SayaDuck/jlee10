@@ -1,6 +1,6 @@
 #Team Summer Jam -- Jonathan Lee, Saqif Abedin, Michelle Thaung
 #SoftDev
-#K06 -- Learnination Through Amalgamation (aka making 05 better)
+#K06 -- Learnination Through Amalgamation/aka making 05 better/Amalgamated code by adding comments, simplified code
 #2020-09-30
 
 import random
