@@ -3,6 +3,12 @@
 #K07 -- Stl/O: Divine your Destiny (or, figure out chance)
 #2020-09-30
 
+# First off, we had to open the CSV file. "with" seemed like the most elegant way to do it (not having to worry about opening/closing, so we went *with* that.)
+# The csv library was used so we could go through the file easily, skipping the first line (the header, which would introduce issues with str/float), and putting the rest in a dictionary with correct key-value pairs.
+# Then, we removed the last line since it was for the total percentages, and its big number would mess the data up.
+# Using random.choices, each key was weigted by its value. Then we had to use [0] since it returns a list.
+# Finally, we added the percent chance for the resulting key (looked better honestly)
+
 import csv #could also do it with loops but that would be really long. Might also do it later?
 import random
 
