@@ -1,0 +1,9 @@
+this here some plaintext tho
+
+Q: What happens when you access this file
+     via http://localhost:5000/static/foo ?
+
+
+A: Going to static/foo downloads the foo.txt file, and continues to stay on the root page
+     the root page shows “No hablo queso” as usual
+
