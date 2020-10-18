@@ -4,14 +4,19 @@
 # 2020-10-15
 
 from flask import Flask, render_template
-from data.occupations import select, get_table
+from occupations import select, get_table
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def main():
-    return render_template("occupations.html", title="Occupations", occ=select(), table=get_table())
+    return "No hablo queso"
+
+
+@app.route("/occupyflaskst")
+def occypy():
+    return render_template("tablified.html", title="Occupations", occ=select(), table=get_table())
 
 
 if __name__ == "__main__":
