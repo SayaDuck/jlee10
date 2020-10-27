@@ -1,0 +1,46 @@
+Jonathan Lee
+SoftDev
+LJ00 -- Le Voyage de Learnination avec Mongo, Première Phase (mongodb intro)
+2020-10-29
+
+- JSON (UFT-8, String/Boolean/Number/Array, Human & Machine readable)
+    - {"name" : "Jonathan"}
+- BSON (Binary, String/Boolean/Number/Array/Date/Raw Binary, Machine only readable)
+- MongoDB stores data in BSON, and you can then view it in JSON.
+- BSON is faster to parse and lighter to store than JSON. 
+- JSON supports fewer data types than BSON.
+
+- URI: Uniform Resource Identifier
+- srv: establishes secure connection
+
+- Export
+    - in JSON: mongoimport/mongoexport
+        - mongoexport --uri "<Atlas Cluster URI>"
+        - mongoexport --collection=<collection name>
+        - mongoexport --out=<filename>.json
+    - in BSON: mongorestore/mongodump
+        - mongodump --uri "<Atlas Cluster URI>"
+
+- Example code
+    - mongodump --uri "mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies"
+    - mongoexport --uri="mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies" --collection=sales --out=sales.json
+    - mongorestore --uri "mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies"  --drop dump
+    - mongoimport --uri="mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/sample_supplies" --drop sales.json
+
+- Namespace: concatenation of db name and collection name
+- You can filter the Data Explorer (>Collections) by key-value pairs (searching for that value)
+
+- mongo shell is also obviously a fully functioning js interpreter
+- Connect to Atlas cluster
+    - mongo "mongodb+srv://<username>:<password>@<cluster>.mongodb.net/admin"
+- Search
+    - show dbs
+    - use sample_training
+    - show collections
+    - db.zips.find({"state": "NY"})
+- it iterates through cursor results (literally "it")
+
+- db.inspections.count({"date" : "Feb 20 2015})
+    - returns 320
+
+

@@ -1,0 +1,11 @@
+Jonathan Lee
+SoftDev
+LJ00 -- Le Voyage de Learnination avec Mongo, Première Phase (mongodb intro)
+2020-10-29
+
+- mongo is a NoSQL database
+- Documents in collections as data structure
+- uses BSON (binary representation of json)
+- remember to set approved IPs instead of allowing all when actually using it
+
+- not much to say here, way more in m2
