@@ -1,0 +1,41 @@
+Jonathan Lee
+SoftDev
+LJ01 -- Le Voyage de Learnination avec Mongo, Deuxième Phase (mongodb intro)
+2020-11-30
+
+_id is an ObjectId type value, but you can select any unique value when inserting new doc
+
+use <db_name>
+
+db.inspections.insert({
+      "key 1" : value 1 ,
+      "key 2" : value 2
+  }
+
+duplicate documents can be in the same collection, as long as _id values are different
+
+you can insert multiple docs ordered, or not ordered.
+ORDERED STOPS IF ERROR HAPPENS IN A DOC 
+unordered just does all of it 
+
+db.zips.updateMany()
+db.zips.updateOne()
+
+db.grades.updateOne({ "student_id": 250, "class_id": 339 },
+                    { "$push": { "scores": { "type": "extra credit",
+                                             "score": 100 }
+                                }
+                     })
+
+^ Adds a document element to "scores" array
+You can use "$set" to add a field too though
+
+db.zips.deleteMany()
+db.zips.deleteOne()
+
+Removing all collections in a database also removes the database!!!!
+
+db.<collectionname>.drop() deletes the collectionname
+
+
+Honestly I really hate mongo already, get me back to sql... :(

@@ -40,7 +40,7 @@ LJ00 -- Le Voyage de Learnination avec Mongo, Première Phase (mongodb intro)
     - db.zips.find({"state": "NY"})
 - it iterates through cursor results (literally "it")
 
-- db.inspections.count({"date" : "Feb 20 2015})
+- db.inspections.count({"date" : "Feb 20 2015"})
     - returns 320
 
 

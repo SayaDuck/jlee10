@@ -1,0 +1,37 @@
+Jonathan Lee
+SoftDev
+LJ01 -- Le Voyage de Learnination avec Mongo, Deuxième Phase (mongodb intro)
+2020-11-30
+
+db.trips.find({ "tripduration": { "$lte" : 70 }})
+$lte: less than or equal to, return all docs with that
+
+use sample_training
+db.zips.find({ pop: { "$lt" : 1000 }}).count()
+8065
+
+db.trips.find({ "birth year": 1998 }).count()
+12
+db.trips.find({ "birth year": { "$gt" : 1998 }}).count()
+18
+difference: 6
+
+"$gt": 0 
+"$ne": 0
+for at least one stop
+
+example for logic operators:
+db.routes.find({ "$and": [ { "$or" :[ { "dst_airport": "KZN" },
+                                    { "src_airport": "KZN" }
+                                  ] },
+                          { "$or" :[ { "airplane": "CR2" },
+                                     { "airplane": "A81" } ] }
+                         ]}).pretty()
+
+
+db.inspections.find({ "$and": [ { "$or" :[ { "dst_airport": "KZN" },
+                                    { "src_airport": "KZN" }
+                                  ] },
+                          { "$or" :[ { "airplane": "CR2" },
+                                     { "airplane": "A81" } ] }
+                         ]}).pretty()
