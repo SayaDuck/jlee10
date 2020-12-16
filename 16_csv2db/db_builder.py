@@ -10,8 +10,10 @@ DB_FILE="discobandit.db"
 db = sqlite3.connect(DB_FILE) #open if file exists, otherwise create
 c = db.cursor()               #facilitate db ops -- you will use cursor to trigger db events
 
-c.execute("CREATE TABLE IF NOT EXISTS students(Name text, Age int, ID int, PRIMARY KEY(ID));") #Creates table if it doesn't already exist, ID is unique
-c.execute("CREATE TABLE IF NOT EXISTS courses(Code int, Mark int, ID int);") #Creates second table
+#Creates table if it doesn't already exist, ID is unique
+c.execute("CREATE TABLE IF NOT EXISTS students(Name text, Age int, ID int, PRIMARY KEY(ID));")
+#Creates second table
+c.execute("CREATE TABLE IF NOT EXISTS courses(Code int, Mark int, ID int);") 
 
 with open('students.csv', newline = '') as csvfile: #Open students.csv
     reader = csv.DictReader(csvfile)
