@@ -1,21 +1,9 @@
+#Team SharpCat (Alvin Wu, Madelyn Mao, Jonathan Lee, Victoria Gao)
+#SoftDev 
+#K16 -- No Trouble
+#2020-12-14
 
-CREATE TABLE tpotusa
- (name TEXT, id INTEER PRIMARY KEY);
- INSERT INTO tpotusa VALUES ("basitar", 1);
-etc.
-
-TEXT
-, INTEGER, REAL, NUMERIC, BLOB
-blob means no suggested type, numeric defaults to int but can be float
-
-Columns can be given a PRIMARY KEY attribute, every entry in that column has to be unique and can't be NULL.
-Columns can be given a NOT NULL attribute, denoting that no entry can be NULL.
-
-SELECT * FROM <tablename>;
-show all fields for each entry in table tablename
-
-SELECT name FROM <tablename>;
-SELECT name FROM <tablename> WHERE id=0;
-
-$ sqlite3 <dbfile>
-Add a dot to the start of SQLite shell commands
+-"CREATE TABLE IF NOT EXISTS" is pretty straightforward, used to prevent duplicates if you run the script more than once without deleting the db. 
+-New thing called parameters, you put the variables you want to insert into the tuple and place it at the end of the insert command 
+-The question marks in the values are placeholders for values that will be binded later, in this case they are binded in the params variable.
+-csv.DictReader() reads in the csv file and stores its values in a dictionary 
