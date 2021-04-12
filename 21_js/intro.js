@@ -13,7 +13,7 @@ function factI(n) { //returns factorial of n, computed iteratively.
   }
   
   function factR(n) { //returns factorial of n, computed recursively.
-    if (n < 1) return "error, negative input";
+    if (n < 0) return "error, negative input";
     else if (n == 0) return 1;
     else if (n == 1) return 1;
     else return n * factR(n-1);
@@ -23,9 +23,10 @@ function factI(n) { //returns factorial of n, computed iteratively.
     var ans = 0;
     var pri = 0;
     var sec = 1;
-    if (n < 1) return "not a natural number input";
-    else if (n == 2) return 1;
-    for (i = 2; i < n; i++) {
+    if (n < 0) return "error, negative input";
+    else if (n == 0) return 0;
+    else if (n == 1) return 1;
+    for (i = 1; i < n; i++) {
       ans = pri + sec;
       pri = sec;
       sec = ans;
@@ -34,13 +35,17 @@ function factI(n) { //returns factorial of n, computed iteratively.
   }
   
   function fibR(n) { //returns the nth Fibonacci number, computed recursively.
-    if (n < 1) return "not a natural number input";
-    else if (n == 1) return 0;
-    else if (n == 2) return 1;
+    if (n < 0) return "error, negative input";
+    else if (n == 0) return 0;
+    else if (n == 1) return 1;
     else return fibR(n-1) + fibR(n-2);
   }
   
-  console.log(factI(2));
-  console.log(factR(2));
-  console.log(fibI(2));
-  console.log(fibR(2));
+  console.log(factI(2)); //should be 2
+  console.log(factR(2)); //should be 2
+  console.log(fibI(2)); //should be 1
+  console.log(fibR(2)); //should be 1
+  console.log(fibI(4)); //should be 3
+  console.log(fibR(4)); //should be 3
+  console.log(fibI(5)); //should be 5
+  console.log(fibR(5)); //should be 5
