@@ -1,5 +1,5 @@
 Collected Knowledge & Wisdom on
-# API_NAME_HERE
+# Wynncraft API
 ---
 ## Provides:
 This API provides...
