@@ -1,0 +1,24 @@
+Team PictureFrame (Liam Kronman, Jonathan Lee)
+SoftDev pd1
+K25 -- Implementing responsive rectangle and circle drawing in canvas element using JS
+2021-05-05
+
+clickdraw.html
+- assign id to canvas
+- link js below elements
+
+clickdraw.js
+- document when calling the entire page
+- c (defined as the canvas element) when doing stuff to canvas
+- ctx (defined as the 2d context of c)
+- mode (state variable, rect vs dot)
+- toggleMode, when called, just swaps between the two modes
+- make sure to call beginPath first!!!
+- stroke is what actually draws the thing, stuff before = "instructions"
+- rect: x, y, width, height
+- arc: x, y, radius, start angle, end angle, (and optional direction)
+- calling clearRect with canvas width and height to wipe the canvas
+- event listeners:
+    - draw on mousedown
+    - toggleMode on click of toggle-btn
+    - wipeCanvas on click of clear-btn
