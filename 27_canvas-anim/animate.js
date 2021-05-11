@@ -17,10 +17,10 @@ var stopButton = document.getElementById("buttonStop"); // GET STOP BUTTON
 var DVDButton = document.getElementById("buttonDVD"); // GET DVD BUTTON
 
 //prepare to interact with canvas in 2D
-var ctx = c.getContext("2d"); // YOUR CODE HERE
+var ctx = c.getContext("2d"); 
 
 //set fill color to team color
-ctx.fillStyle = 'red'; // YOUR CODE HERE
+ctx.fillStyle = 'red'; 
 
 var requestID = 0;  //init global var for use with animation frames
 
@@ -28,8 +28,6 @@ var requestID = 0;  //init global var for use with animation frames
 //var clear = function(e) {
 var clear = (e) => {
   console.log("clear invoked...")
-
-  // YOUR CODE HERE
   ctx.clearRect(0,0,c.width,c.height);
 };
 
@@ -43,10 +41,6 @@ var circlesize = 0; // for circle size
 //var drawDot = function() {
 var drawDot = () => {
   console.log("drawDot invoked...")
-
-  // YOUR CODE HERE
-
-
   
   clear(ctx);
   ctx.beginPath();
@@ -68,18 +62,6 @@ var drawDot = () => {
             growing = true;
         }
   }
-
-
-  /*
-    ...to
-    Wipe the canvas,
-    Repaint the circle,
-    ...and somewhere (where/when is the right time?)
-    Update requestID to propagate the animation.
-    You will need
-    window.cancelAnimationFrame()
-    window.requestAnimationFrame()
-   */
 };
 
 
@@ -88,18 +70,11 @@ var stopIt = () => {
   console.log("stopIt invoked...")
   console.log( requestID );
 
-  // YOUR CODE HERE
   window.cancelAnimationFrame(requestID); // stops it 
-  /*
-    ...to
-    Stop the animation
-    You will need
-    window.cancelAnimationFrame()
-  */
 };
 
-var dvdxmov = .5;
-var dvdymov = 1;
+var dvdxmov = 1;
+var dvdymov = .5;
 var dvdxpos = 1;
 var dvdypos = 1;
 var logo = new Image();
@@ -110,13 +85,17 @@ imageheight = 40;
 var deeVeeDee = () => {
     console.log("deeVeeDee invoked...");
 
-    // code time
     clear(ctx);
     ctx.drawImage(logo, dvdxpos, dvdypos, imagewidth, imageheight);
     window.cancelAnimationFrame(requestID);
     window.requestAnimationFrame(deeVeeDee);
 
     requestID ++
+
+    // if x pos is greater than frame width, negate x position, moves left
+    // if x pos is less than 0, negate x position, moves right
+    // if y pos is greater than frame height, negate y position, moves down
+    // if y pos is less than 0, negate y position, moves up
 
     if (dvdxpos >= c.width - imagewidth) {
         dvdxmov *= -1;
@@ -129,13 +108,9 @@ var deeVeeDee = () => {
         dvdymov *= -1;
     }
 
-
     dvdxpos += dvdxmov;
     dvdypos += dvdymov;
 }
-
-
-
 
 
 dotButton.addEventListener( "click", drawDot );
